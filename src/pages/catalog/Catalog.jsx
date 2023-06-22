@@ -5,14 +5,14 @@ import { useGetClothesQuery } from "../../store/ClothesSlice";
 import hui from '../../assets/images/nursidas-low-resolution-logo-white-on-black-background.png'
 
 const Catalog = () => {
-  const { data, error, isLoading } = useGetClothesQuery();
+  const { data} = useGetClothesQuery();
   const params = useParams();
   const category = params.category;
   // console.log(category);
   const navigate = useNavigate();
 
   const addToBasket = (el) => {
-    const basketItems = JSON.parse(localStorage.getItem("basket") || "[]");
+    const basketItems = JSON.parse(localStorage.getItem("basket") || []);
     basketItems.push(el);
     localStorage.setItem("basket", JSON.stringify(basketItems));
     console.log(JSON.parse(localStorage.getItem("basket")));
