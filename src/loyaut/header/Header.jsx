@@ -12,10 +12,12 @@ const Header = () => {
     localStorage.setItem("basket", JSON.stringify(basketItems));
     location.reload();
   };
-  const closeWindow = (e)=> {
-    e.stopPropagation()
-    setBasketWindow(css.basketWrapperClose)
+  const closeWindow = (e) => {
+    e.stopPropagation();
+    setBasketWindow(css.basketWrapperClose);
   };
+
+  let count = 0;
 
   const basketItems = JSON.parse(localStorage.getItem("basket"));
   return (
@@ -46,7 +48,9 @@ const Header = () => {
           <hr />
           <div className={css.cardBasketWrapper}>
             {basketItems?.map((el, ind) => {
+            
               if (el) {
+                count+=el.price
                 return (
                   <div key={ind} className={css.cardBasket}>
                     <img src="" alt="" />
@@ -57,6 +61,7 @@ const Header = () => {
                     <div className={css.cardDes}>
                       <h2 className="size">size: {el.size.join(", ")}</h2>
                       <h2 className="color">color: {el.color.join(", ")}</h2>
+                      <h2 className="color"> price: {el.price} $</h2>
                       <button onClick={() => deleteCard(ind)}>Удалить</button>
                     </div>
                   </div>
@@ -65,7 +70,7 @@ const Header = () => {
             })}
           </div>
           <hr />
-          <h1>hui</h1>
+          <h1>Total count: {count} $</h1>
         </div>
       </div>
     </div>

@@ -1,13 +1,13 @@
-import { useGetClothesQuery } from "../../store/ClothesSlice";
 import css from "./Main.module.css";
 import React from "react";
 import img from "../../assets/images/nursidas-low-resolution-logo-white-on-black-background.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGetClothesQuery } from "../../store/ClothesSlice";
 
 const Main = () => {
-  const { data, error, isLoading } = useGetClothesQuery();
+  const { data } = useGetClothesQuery()
 
   const addToBasket = (el) => {
     const basketItems = JSON.parse(localStorage.getItem("basket") || "[]");
