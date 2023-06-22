@@ -2,7 +2,7 @@
 display: flex;
 align-items: center;
 justify-content: space-between;
-border: 10px double black;
+border: 10px double rgb(255, 255, 255);
 padding: 10px;
 }
 .header>a>img{
@@ -10,10 +10,72 @@ padding: 10px;
   height: 140px;
 }
 .header>button{
-  background-color: black;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding: 20px 50px;
   border: none;
   border-radius: 10px;
   font-size: 20px;
+}
+nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+nav>a{
+  color: black;
+  text-decoration: none;
+  padding: 10px 30px ;
+  background-color: aliceblue;
+border-radius: 10px;
+font-size: 20px;
+}
+
+
+.basketWrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.666);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket {
+  height: 500px;
+  width: 800px;
+  background-color: black;
+  border: double 10px white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+.cardBasketWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.cardBasket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  border-bottom: white 5px solid;
+}
+.cardBasket > img {
+  height: 300px;
+  width: 100%;
+}
+.basketWrapperClose{
+  display: none;
 }
