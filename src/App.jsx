@@ -11,8 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Main />} />
-            <Route path="/detail" element={<Detail />} />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/catalog/:category/detail/:id" element={<Detail />} />
+            <Route path="/catalog/:category" element={<Catalog />} />
           </Route>
         </Routes>
       </Router>
